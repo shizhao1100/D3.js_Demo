@@ -52,40 +52,39 @@ var ShowGPSLocation = function () {
 }
 var ShowNameLocation = function () {
 
-    var data = new Array();
 
-    var getdata = (function () {
-        
-        d3.csv("data/nameLocation.csv", function (error, root) {
-            data.push(root);
-        });
-    })()
-
-    //var data = getdata();
-    console.log(data);
-
-
-    NewData.forEach(function (d) {
-        var url = "http://api.map.baidu.com/geocoder/v2/?address=" + d.name + "&output=json&ak=KF1ere1j8Y439K2hhHrtG9TF&callback=showLocation";
-        $.ajax({
-            url: url,
-            dataType: 'jsonp',
-            success: function (data) {
-                var r = {
-                    lat: data.result.location.lat,
-                    long: data.result.location.lng,
-                    imgURL: d.imgURL
-                }
+    Papa.parse('data/nameLocation.csv', {
+        download: true,
+        complete: function (results) {
+            var data = results.data;
+            var NewData = new Array();
+            for (var i = 0; i < data.length; i++) {
+                var url = "http://api.map.baidu.com/geocoder/v2/?address=" + data[i][0] + "&output=json&ak=KF1ere1j8Y439K2hhHrtG9TF&callback=showLocation";
+                $.ajax({
+                    url: url,
+                    dataType: 'jsonp',
+                    success: function (result) {
+                        var r = {
+                            lat: result.result.location.lat,
+                            long: result.result.location.lng,
+                            imgURL: data[i][1]
+                        }
+                        NewData.push(r);
+                    }
+                });
             }
-        });
+            console.log(NewData);
+            //appendcircle(NewData);
+            appendimg(NewData);
+        }
     });
-    appendimg(NewData);
-    //appendcircle(NewData);
-    // });
+
+
+
 }
 var ShowLocation = function () {
-    ShowGPSLocation();
-    //ShowNameLocation();
+    //ShowGPSLocation();
+    ShowNameLocation();
 }
 	
 d3.json("data/world.json", function (error, root) {
