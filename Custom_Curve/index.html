@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+body {
+  width: 960px;
+  height: 500px;
+  position: relative;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.axis text {
+  font: 10px sans-serif;
+}
+
+.line {
+  fill: none;
+  stroke: #000;
+  stroke-linecap: round;
+}
+
+line {
+  stroke: #aaa;
+  shape-rendering: crispEdges;
+}
+
+#acceleration {
+  position: absolute;
+  bottom: 27px;
+  right: 50px;
+}
+
+#acceleration input {
+  width: 140px;
+}
+
+#acceleration span {
+  position: relative;
+  top: -3px;
+}
+
+#acceleration output {
+  display: inline-block;
+  width: 3.5em;
+}
+
+</style>
+<body>
+  <div id ="Gragp"></div>
+
+<script src="../lib/d3.js"></script>
+<script src="defineFunction.js"></script>
+<script>
+
+      var margin = { top: 40, right: 340, bottom: 40, left: 200 },
+        width = 960 - margin.left - margin.right,
+        height = 500 - margin.top - margin.bottom;
+
+      var p_svg = d3.select("#Gragp").append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+      var p_MaxX = 20;
+      var p_MaxY = 100;
+      var p_fun = function(x){
+        return  x*x+20;
+      }
+
+  ShowDefineFunctionGraph(p_svg,p_MaxX,p_MaxY,p_fun);
+
+</script>
