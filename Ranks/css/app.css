@@ -1,0 +1,54 @@
+#box{
+    width:850px;
+    background-image: url("../img/bg.jpg");
+    margin:0 auto;
+    background-size:cover;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+h3{
+    font-size: 28px;
+}
+.newContent span{
+  display: block;
+  text-indent: 2em; 
+  font-size: 24px;
+  word-spacing: 2em;
+  line-height:2em;
+}
+.x-axis path {
+    stroke:transparent;
+    fill:none;
+}
+.x-axis line {
+    fill: none;
+    stroke: none;
+    stroke-opacity:0.8;
+    shape-rendering: crispEdges;
+}
+.bars rect {
+    fill:#FC1D94;
+    fill-opacity:0.9;
+}
+.title {
+    font-weight: bold;
+    font-size: 24px;
+}
+#precise-value {
+    fill:white;
+    font-size: 12px;
+}
+
+path {
+  fill: #ccc;
+  stroke: #333;
+  stroke-width: 1.5px;
+  transition: fill 250ms linear;
+  transition-delay: 150ms;
+}
+
+path:hover {
+  fill: #FC1D94;
+  stroke: #000;
+  transition-delay: 0;
+}

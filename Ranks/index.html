@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="lib/d3.v3.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/app.css">
+</head>
+
+<body >
+<div id="box">
+<div id = Rank1Title class="RankTitle"><h3>1.明星最喜欢结婚的月份</h3></div>
+<div id = Rank1 class="RankGraph"></div>
+<div id = Rank1Text class="newContent"><span>明星最喜欢的结婚月份是十一月份，其实是八月。</span></div>
+<div id = Rank3Title class="RankTitle"><h3>2.明星结婚地TOP5</h3></div>
+<div id = Rank3 class="RankGraph"></div>
+<div id = Rank3Text class="newContent"><span>中国明星夫妻最喜欢的结婚地点主要是北京。</span></div>
+
+<div id = Rank2Title class="RankTitle"><h3>3.明星结婚地国内国外占比</h3></div>
+<div id = Rank2 class="RankGraph"></div>
+<div id = Rank2Text class="newContent"><span>结婚地点国内国外占比文字说明区</span></div>
+
+<div id = Rank4Title class="RankTitle"><h3>4.圈内圈外人数占比</h3></div>
+<div id = Rank4 class="RankGraph"></div>
+<div id = Rank4Text class="newContent"><span>圈内圈外人数占比文字说明区</span></div>
+
+<script src="js/Rank1.js" charset="utf-8"></script>
+<script src="js/Rank2.js" charset="utf-8"></script> 
+<script src="js/Rank3.js" charset="utf-8"></script>   
+<script src="js/Rank4.js" charset="utf-8"></script>
+
+<div id="Div6" style="margin-bottom:50px;"> 
+  <h3>5.男女明星结婚的年龄趋势：</h3>
+</div>
+<script type="text/javascript" src="js/dbrect.js"></script>
+<script type="text/javascript" >
+    dbrect("#Div6","data/dbage.csv");
+</script>
+  <div class="newContent">
+    <span>根据统计结果显示男女明星在30岁到35岁之间结婚的人数最多，超过40岁的女星结婚人数较少。</span>
+  </div>
+
+
+<div id="Div7" style="margin-bottom:50px;">
+  <h3>6.明星夫妻年龄差距： </h3></div>
+     <script type="text/javascript" src="js/rect.js"></script>
+    <script type="text/javascript">
+       rect("#Div7","data/con_age.csv");
+    </script>
+ <div class="newContent">
+   <span>统计结果显示年龄差距在4岁左右的明星夫妻最多</span>
+   </div>
+
+
+<div id="Div8" style="margin-bottom:50px;">
+  <h3>7.明星夫妻的恋爱时间大揭秘：</h3>
+</div>
+<script type="text/javascript" src="js/pie.js"></script>
+    <script type="text/javascript">
+       pie("#Div8","data/loveTime.csv");
+    </script>
+ <div class="newContent">
+   <span>从图中可以看出，明星夫妻在恋爱4年-7年结婚的比例较大，其次是恋爱1年选择结婚的明星夫妻。明星夫妻平均恋爱时间4-5年。其中，古巨基和陈韵晴恋爱最长，达20年，完成爱情长跑步入婚姻；王全安和张雨绮恋爱4天，也创造了最短的恋爱时间的明星夫妻。</span>
+ </div>
+
+
+<div id="Div9" style="margin-bottom:50px;">
+<h3>8.明星夫妻结婚状态：（是否带球）</h3>
+</div>
+<script>
+     pie("#Div9","data/Isson.csv");
+</script>
+ <div class="newContent"><span>图中可以看出明星夫妻带球结婚的比较不在少数，其中包贝尔和包文婧、林志颖和陈若仪、刘芸和郑钧更是选择了带娃结婚。
+</span>
+</div>
+
+
+<div id="Div10" style="margin-bottom:50px;">
+<h3>9.彩礼及婚礼花销排行榜：</h3>
+</div>
+<script type="text/javascript" src="js/rect2.js"></script>
+<script>
+     rect2("#Div10","data/money.csv");
+</script>
+<div class="newContent">
+<span>图中可以看出黄晓明和杨颖婚礼花费排在榜首，Bruce和李玟的婚礼花费排在第二位，均是上亿的婚礼场面。</span>
+</div>
+
+<div id="Div11" style="margin-bottom:50px;">
+<h3>10.明星夫妻身高差距统计：</h3>
+</div>
+<script>
+     rect("#Div11","data/height.csv");
+</script>
+<div class="newContent"><span>图中可以看出明星夫妻身高差在10-14cm之间的cp最多</span>
+</div>
+</div>
+</body>
+
+</html>

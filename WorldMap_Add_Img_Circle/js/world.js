@@ -1,6 +1,8 @@
-var width = 1920;
-var height = 1080;
 
+var width = 1800;
+var height = 960;
+
+document.body.style.backgroundColor="skyblue";
 var svg = d3.select("#world").append("svg")
     .attr("width", width)
     .attr("height", height)
@@ -97,10 +99,10 @@ d3.json("data/world.json", function (error, root) {
         .data(root.features)
         .enter()
         .append("path")
-        .attr("stroke", "#000")
+        .attr("stroke", "RGB(106,106,97)")
         .attr("stroke-width", 1)
         .attr("fill", function (d, i) {
-            return "#cccccc";
+            return "RGB(255,212,161)";
         })
         .attr("d", path);
     ShowLocation();
