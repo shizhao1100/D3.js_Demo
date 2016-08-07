@@ -43,14 +43,14 @@ svg {
 <script>
 
 var m = [30, 10, 10, 10],
-    w = 960 - m[1] - m[3],
+    w = 1920 - m[1] - m[3],
     h = 500 - m[0] - m[2];
 
 var x = d3.scale.ordinal().rangePoints([0, w], 1),
     y = {},
-    dragging = {};
+    dragging = {};      
 
-var line = d3.svg.line(),
+var line = d3.svg.line().interpolate("basis"),
     axis = d3.svg.axis().orient("left"),
     background,
     foreground;
@@ -66,7 +66,9 @@ d3.csv("cars.csv", function(error, cars) {
   // Extract the list of dimensions and create a scale for each.
   x.domain(dimensions = d3.keys(cars[0]).filter(function(d) {
     return d != "name" && (y[d] = d3.scale.linear()
-        .domain(d3.extent(cars, function(p) { return +p[d]; }))
+        .domain(d3.extent(cars, function(p) { 
+          return +p[d]; 
+        }))
         .range([h, 0]));
   }));
 
@@ -76,7 +78,9 @@ d3.csv("cars.csv", function(error, cars) {
     .selectAll("path")
       .data(cars)
     .enter().append("path")
-      .attr("d", path);
+      .attr("d", function(d){
+        return path(d);
+      });
 
   // Add blue foreground lines for focus.
   foreground = svg.append("g")

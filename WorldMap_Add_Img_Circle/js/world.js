@@ -54,32 +54,61 @@ var ShowGPSLocation = function () {
 }
 var ShowNameLocation = function () {
 
-
-    Papa.parse('data/nameLocation.csv', {
-        download: true,
-        complete: function (results) {
-            var data = results.data;
-            var NewData = new Array();
-            for (var i = 0; i < data.length; i++) {
-                var url = "http://api.map.baidu.com/geocoder/v2/?address=" + data[i][0] + "&output=json&ak=KF1ere1j8Y439K2hhHrtG9TF&callback=showLocation";
-                $.ajax({
-                    url: url,
-                    dataType: 'jsonp',
-                    success: function (result) {
+    d3.csv('data/nameLocation.csv', function (error, root) {
+        console.log(root);
+        var NewData = new Array();
+        for (var i = 0; i < root.length; i++) {
+            var url = "http://api.map.baidu.com/geocoder/v2/?address=" + root[i].name + "&output=json&ak=KF1ere1j8Y439K2hhHrtG9TF&callback=showLocation";
+            $.ajax({
+                async: false,
+                url: url,
+                data: {},
+                dataType: 'jsonp',
+                success: function (result) {
+                    for (var j = 0; j < root.length; j++) {
                         var r = {
                             lat: result.result.location.lat,
                             long: result.result.location.lng,
-                            imgURL: data[i][1]
+                            imgURL: root[j].imgURL
                         }
+                        console.log(r);
                         NewData.push(r);
                     }
-                });
-            }
-            console.log(NewData);
-            //appendcircle(NewData);
-            appendimg(NewData);
+                    console.log(NewData);
+                    //appendcircle(NewData);
+                    appendimg(NewData);
+                }
+            });
         }
+
     });
+
+    // Papa.parse('data/nameLocation.csv', {
+    //     download: true,
+    //     complete: function (results) {
+    //         var data = results.data;
+    //         var NewData = new Array();
+    //         for (var i = 0; i < data.length; i++) {
+    //             var url = "http://api.map.baidu.com/geocoder/v2/?address=" + data[i][0] + "&output=json&ak=KF1ere1j8Y439K2hhHrtG9TF&callback=showLocation";
+    //             $.ajax({
+    //                 url: url,
+    //                 async:0,
+    //                 dataType: 'jsonp',
+    //                 success: function (result) {
+    //                     var r = {
+    //                         lat: result.result.location.lat,
+    //                         long: result.result.location.lng,
+    //                         imgURL: data[i][1]
+    //                     }
+    //                     NewData.push(r);
+    //                 }
+    //             });
+    //         }
+    //         console.log(NewData);
+    //         //appendcircle(NewData);
+    //         appendimg(NewData);
+    //     }
+    // });
 
 
 
