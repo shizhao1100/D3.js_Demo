@@ -3,7 +3,8 @@
 ## 主旨
 ----------------
 
-    该案例库由个人构建、旨在构建模块化的D3.js图表及提供一些常用数据。方便快速搭建基于D3.js的可视化项目同时为D3.js的初学者提供一定的帮助。
+        该案例库由个人构建、旨在构建模块化的D3.js图表及提供一些常用数据。方便快速搭建基于D3.js的可视化项目同时为D3.js的初学者提供
+    一定的帮助。
 
 ## 案例来源
 ----------------
@@ -12,6 +13,7 @@
 + D3.js开发者友情提供
 
 ## 目录
+----------------
 
 + data
     + 汉字拓扑关系
@@ -45,32 +47,59 @@
     + 功能：世界地图上打点添加图片
     + 技术栈：D3        
     + 截图
-    + ![image](https://raw.githubusercontent.com/shizhao1100/D3js.Demo/master/img/WorldMap_Add_Img_Circle.png)
+    + ![image](https://raw.githubusercontent.com/shizhao1100/D3.js_Demo/master/img/WorldMap_Add_Img_Circle.png)
+
++ D3WordCloud
+    + 来源：sz_p
+    + 功能：中英文分词显示词云
+    + 技术栈：d3.layout.cloud.js、D3、php、version 2.0        
+    + 截图
+    + ![image](https://raw.githubusercontent.com/shizhao1100/D3.js_Demo/master/img/D3WordCloud.png)
 
 + D3LiquidFillGauge
     + 来源：不可考
     + 功能：显示指数
     + 技术栈：liquidFillGauge.js、D3        
     + 截图
-    + ![image](https://raw.githubusercontent.com/shizhao1100/D3js.Demo/master/img/D3LiquidFillGauge.png)
+    + ![image](https://raw.githubusercontent.com/shizhao1100/D3.js_Demo/master/img/D3LiquidFillGauge.png)
 
 + Custom_Curve
     + 来源：官网Demo改编
     + 功能：显示自定义函数曲线
     + 技术栈：D3        
     + 截图
-    + ![image](https://raw.githubusercontent.com/shizhao1100/D3js.Demo/master/img/Custom_Curve.png)
+    + ![image](https://raw.githubusercontent.com/shizhao1100/D3.js_Demo/master/img/Custom_Curve.png)
 
 + 遮罩节点
     + 来源：私密の/太阳
     + 功能：不规则图片规则化显示
     + 技术栈：CSS3        
     + 截图
-    + ![image](https://raw.githubusercontent.com/shizhao1100/D3js.Demo/master/img/节点遮罩.png)
+    + ![image](https://raw.githubusercontent.com/shizhao1100/D3.js_Demo/master/img/节点遮罩.png)
 
 + BrusHandle
     + 来源：官网
     + 功能：刷选器
     + 技术栈：D3        
     + 截图
-    + ![image](https://raw.githubusercontent.com/shizhao1100/D3js.Demo/master/img/BrusHandle.png)
+    + ![image](https://raw.githubusercontent.com/shizhao1100/D3.js_Demo/master/img/BrusHandle.png)
+
++ Ranks
+    + 来源：sz_p
+    + 功能：各种排行榜
+    + 技术栈：D3
+
++ img
+    + README.md 图片提供文件
+
++ lib
+    + 说明：lib库文件
+    + bootstrap-slider.js
+    + d3.js（V3）
+    + jquery.min.js
+    + three.min.js
+    
+## 声明
+    不定期维护、您的支持是我更新的动力。</br>
+    源码完全开放，欢迎Star、Fork、提交BUG，并提出您宝贵的意见与建议。</br>
+    该案例库内容仅供学习和参考请勿用于商业用途。</br>
