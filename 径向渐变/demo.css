@@ -1,0 +1,63 @@
+
+body{
+    text-align:center;
+}
+
+div{
+    margin:auto;
+}
+
+
+#grad1 {
+    height: 150px;
+    width: 200px;
+    background: -webkit-radial-gradient(red, yellow, green,blue); /* Safari 5.1 - 6.0 */
+    background: -o-radial-gradient(red, yellow, green,blue); /* Opera 11.6 - 12.0 */
+    background: -moz-radial-gradient(red, yellow, green,blue); /* Firefox 3.6 - 15 */
+    background: radial-gradient(red, yellow, green,blue); /* 标准的语法（必须放在最后） */
+}
+
+#grad2 {
+    height: 300px;
+    width: 200px;
+    background: -webkit-radial-gradient(circle, red, yellow, green,blue); /* Safari 5.1 - 6.0 */
+    background: -o-radial-gradient(circle, red, yellow, green,blue); /* Opera 11.6 - 12.0 */
+    background: -moz-radial-gradient(circle, red, yellow, green,blue); /* Firefox 3.6 - 15 */
+    background: radial-gradient(circle, red, yellow, green,blue); /* 标准的语法（必须放在最后） */
+}
+
+#grad3 {
+    height: 200px;
+    width: 200px;
+    background: -webkit-radial-gradient(circle, red, yellow, green,blue); /* Safari 5.1 - 6.0 */
+    background: -o-radial-gradient(circle, red, yellow, green,blue); /* Opera 11.6 - 12.0 */
+    background: -moz-radial-gradient(circle, red, yellow, green,blue); /* Firefox 3.6 - 15 */
+    background: radial-gradient(circle,rgba(255,0,0,1), rgba(255,255,0,0.75),rgba(0,0,255,0.25),rgba(255,255,255,0)); /* 标准的语法（必须放在最后） */
+}
+
+#grad5 {
+    height: 200px;
+    width: 200px;
+    background: -webkit-radial-gradient(circle, red, yellow, green,blue); /* Safari 5.1 - 6.0 */
+    background: -o-radial-gradient(circle, red, yellow, green,blue); /* Opera 11.6 - 12.0 */
+    background: -moz-radial-gradient(circle, red, yellow, green,blue); /* Firefox 3.6 - 15 */
+    background: radial-gradient(circle farthest-side,rgba(255,0,0,1), rgba(255,255,0,0.75), rgba(0,255,0,0.5), rgba(0,0,255,0.25),rgba(255,255,255,0)); /* 标准的语法（必须放在最后） */
+}
+/** {
+    margin:0;
+    padding:0;
+}*/ 
+#grad4 {
+    width: 200px;
+    height: 200px;
+    /*margin: 100px auto;*/
+    border: 0px solid #000;
+    border-radius: 200px;
+	animation:mymove 10s infinite;
+}
+
+@keyframes mymove
+{
+from { box-shadow:0 0 0px blue;}
+to {  box-shadow:0 0 100px blue;}
+}
